@@ -1,4 +1,4 @@
-package com.devsolveab.jetpackcomposebasics
+package com.devsolveab.jetpackcomposebasics.composables
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
