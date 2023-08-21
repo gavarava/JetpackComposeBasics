@@ -10,7 +10,12 @@ import androidx.compose.ui.unit.dp
 import com.devsolveab.jetpackcomposebasics.ui.theme.JetpackComposeBasicsTheme
 
 
-
+/**
+ * By passing a function and not a state to OnboardingScreen we are making this composable more
+ * reusable and protecting the state from being mutated by other composables. In general, it keeps
+ * things simple. A good example is how the onboarding preview needs to be modified to call the
+ * OnboardingScreen now
+ */
 @Composable
 fun OnboardingScreen(
     onContinueClicked: () -> Unit,

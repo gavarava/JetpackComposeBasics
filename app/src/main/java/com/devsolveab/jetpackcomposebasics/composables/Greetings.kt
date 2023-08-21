@@ -1,8 +1,9 @@
 package com.devsolveab.jetpackcomposebasics.composables
 
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
@@ -14,14 +15,14 @@ import com.devsolveab.jetpackcomposebasics.ui.theme.JetpackComposeBasicsTheme
 @Composable
 fun Greetings(
     modifier: Modifier = Modifier,
-    names: List<String> = listOf("Lorem", "Ipsum", "Dolor", "Amet")
+    names: List<String> = List(1000) { "$it" }
 ) {
     Surface(
         modifier = modifier,
         color = MaterialTheme.colorScheme.background
     ) {
-        Column(modifier = modifier.padding(vertical = 8.dp)) {
-            for (name in names) {
+        LazyColumn(modifier = modifier.padding(vertical = 8.dp)) {
+            items(items = names) { name ->
                 Greeting(name = name)
             }
         }
